@@ -15,6 +15,7 @@
 
 ## Ending定律
 
+- https://zh.wikipedia.org/wiki/WebAssembly
 - https://www.zhihu.com/question/290521651
 - https://mp.weixin.qq.com/s/klv2lq-VJcHA8WPXDUtNlQ
 
