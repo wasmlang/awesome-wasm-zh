@@ -12,6 +12,12 @@
 
 ----
 
+## 其它awesome
+
+- https://github.com/mbasso/awesome-wasm
+
+----
+
 ## 官方参考
 
 1. https://webassembly.org
@@ -27,10 +33,6 @@
 - https://www.zhihu.com/question/290521651
 - https://mp.weixin.qq.com/s/klv2lq-VJcHA8WPXDUtNlQ
 - https://twitter.com/chaishushan/status/1029924713609363458
-
-<!--
-- https://news.ycombinator.com/item?id=17772371
--->
 
 ## 其它
 
