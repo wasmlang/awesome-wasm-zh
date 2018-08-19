@@ -6,7 +6,7 @@
 
 ----
 
-**关注公众号(WASM Hackers/wasm-hackers)**
+**关注公众号(WASM Hackers/wasm-hackers) 或 QQ群:726475047**
 
 ![](weixin-wasm-hackers.jpg)
 
