@@ -4,6 +4,14 @@
 
 *Ending定律也称为终结者定律，它是Ending在2016年Emscripten技术交流会上给出的断言：所有可以用WebAssembly实现的终将会用WebAssembly实现。*
 
+----
+
+**关注公众号(WASM Hackers/wasm-hackers)**
+
+![](weixin-wasm-hackers.jpg)
+
+----
+
 ## 官方参考
 
 1. https://webassembly.org
