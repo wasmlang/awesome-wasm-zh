@@ -26,6 +26,7 @@
 - https://zh.wikipedia.org/wiki/WebAssembly
 - https://www.zhihu.com/question/290521651
 - https://mp.weixin.qq.com/s/klv2lq-VJcHA8WPXDUtNlQ
+- https://twitter.com/chaishushan/status/1029924713609363458
 
 <!--
 - https://news.ycombinator.com/item?id=17772371
