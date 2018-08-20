@@ -10,6 +10,10 @@
 
 ![](weixin-wasm-hackers.jpg)
 
+WASM Hackers 技术周报:
+
+- https://github.com/chai2010/awesome-wasm-zh/blob/master/wasm-hackers-weekly.md
+
 ----
 
 ## 其它awesome
