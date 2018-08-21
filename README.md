@@ -38,6 +38,15 @@ WASM Hackers 技术周报:
 - https://mp.weixin.qq.com/s/klv2lq-VJcHA8WPXDUtNlQ
 - https://twitter.com/chaishushan/status/1029924713609363458
 
+
+## 黑科技
+
+1. 模拟Window 2000系统:
+   - https://www.v2ex.com/t/481851
+   - https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/win2k.cfg&mem=192&graphic=1&w=1024&h=768
+1. V8为WebAssembly设计高度优化的Liftoff编译器: https://v8project.blogspot.com/2018/08/liftoff.html
+
+
 ## 其它
 
 TODO

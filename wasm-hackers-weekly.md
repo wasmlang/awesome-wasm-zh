@@ -6,6 +6,15 @@
 
 ----
 
+<!--
+WebAssembly dragon!
+http://floooh.github.io/oryol-samples/wasm/Dragons.html
+
+Window 2000 emulated in WebAssembly
+https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/win2k.cfg&mem=192&graphic=1&w=1024&h=768
+
+-->
+
 ## 2018-08-21
 
 WASM Hackers 技术周报(2018-08-21)
