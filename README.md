@@ -38,6 +38,53 @@ WASM Hackers 技术周报:
 - https://mp.weixin.qq.com/s/klv2lq-VJcHA8WPXDUtNlQ
 - https://twitter.com/chaishushan/status/1029924713609363458
 
+----
+
+## WebAssembly图书
+
+- [WebAssembly入门教程](webassembly-primer.md) - 即将完稿, 待出版
+
+----
+
+## 开源实现(虚拟机 & 编译器 & 工具链)
+
+**C/C++**
+
+- https://github.com/LuisHsu/WasmVM
+
+**Go**
+
+- http://github.com/go-interpreter/wagon
+- https://github.com/perlin-network/life
+- https://github.com/akupila/go-wasm
+- https://github.com/tsavola/wag
+
+----
+
+
+## 编程语言
+
+**AssemblyScript**
+
+- https://github.com/AssemblyScript/assemblyscript
+
+**C/C++**
+
+- http://kripken.github.io/emscripten-site/
+
+
+**Go**
+
+- [Getting started into Go and WebAssembly](https://medium.com/@sendilkumarn/getting-started-into-go-and-webassembly-8491b133a616)
+- https://tip.golang.org/pkg/syscall/js/
+
+**Rust**
+
+- https://github.com/rustwasm
+- https://github.com/rustwasm/book
+- [Making WebAssembly better for Rust & for all languages](https://hacks.mozilla.org/2018/03/making-webassembly-better-for-rust-for-all-languages/)
+
+----
 
 ## 黑科技
 
