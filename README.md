@@ -112,6 +112,8 @@ WASM Hackers 技术周报:
    - https://www.reddit.com/r/csharp/comments/98bjdu/brave_pilots_wanted_to_take_c_wpf_where_they
 1. Unity3D
    - https://blogs.unity3d.com/cn/2018/08/15/webassembly-is-here/
+1. Python
+   - http://pypyjs.org/
 
 
 ## 技术文章
@@ -122,6 +124,8 @@ WASM Hackers 技术周报:
 - [The future of WebAssembly](https://blog.scottlogic.com/2018/07/20/wasm-future.html)
 - [Life: A secure, blazing-fast, cross-platform WebAssembly VM in Go](https://medium.com/perlin-network/life-a-secure-blazing-fast-cross-platform-webassembly-vm-in-go-ea3b31fa6e09)
 - [Haxe, WebAssembly, TypeScript, Dart performance benchmark](https://github.com/damoebius/HaxeBench)
+- [Vim Wasm – Vim Editor Ported To WebAssembly](https://kalilinuxtutorials.com/vim-wasm-vim-editor/)
+
 
 ## 其它
 
