@@ -13,6 +13,8 @@ http://floooh.github.io/oryol-samples/wasm/Dragons.html
 Window 2000 emulated in WebAssembly
 https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/win2k.cfg&mem=192&graphic=1&w=1024&h=768
 
+.NET UI framework
+https://www.reddit.com/r/csharp/comments/98bjdu/brave_pilots_wanted_to_take_c_wpf_where_they
 -->
 
 ## 2018-08-21
