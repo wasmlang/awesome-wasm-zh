@@ -64,25 +64,39 @@ WASM Hackers 技术周报:
 
 ## 编程语言
 
+**.Net**
+
+- https://github.com/aspnet/blazor
+
 **AssemblyScript**
 
 - https://github.com/AssemblyScript/assemblyscript
 
-**C/C++**
+**C/C++/D**
 
 - http://kripken.github.io/emscripten-site/
-
+- https://wiki.dlang.org/Generating_WebAssembly_with_LDC
 
 **Go**
 
 - [Getting started into Go and WebAssembly](https://medium.com/@sendilkumarn/getting-started-into-go-and-webassembly-8491b133a616)
 - https://tip.golang.org/pkg/syscall/js/
 
+**Java & Kotlin**
+
+- https://github.com/i-net-software/JWebAssembly
+- https://superkotlin.com/kotlin-and-webassembly/
+- https://github.com/konsoletyper/teavm
+
 **Rust**
 
 - https://github.com/rustwasm
 - https://github.com/rustwasm/book
 - [Making WebAssembly better for Rust & for all languages](https://hacks.mozilla.org/2018/03/making-webassembly-better-for-rust-for-all-languages/)
+
+**More**
+
+- https://github.com/appcypher/awesome-wasm-langs
 
 ----
 
