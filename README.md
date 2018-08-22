@@ -53,6 +53,15 @@ WASM Hackers 技术周报:
    - https://blogs.unity3d.com/cn/2018/08/15/webassembly-is-here/
 
 
+## 技术文章
+
+- [WebAssembly: How and why](https://blog.logrocket.com/webassembly-how-and-why-559b7f96cd71)
+- [Getting started into Go and WebAssembly](https://medium.com/@sendilkumarn/getting-started-into-go-and-webassembly-8491b133a616)
+- [Ray Tracing: WebAssembly vs JavaScript](http://matt-harrison.com/raytracing-webassembly-vs-javascript/)
+- [The future of WebAssembly](https://blog.scottlogic.com/2018/07/20/wasm-future.html)
+- [Life: A secure, blazing-fast, cross-platform WebAssembly VM in Go](https://medium.com/perlin-network/life-a-secure-blazing-fast-cross-platform-webassembly-vm-in-go-ea3b31fa6e09)
+- [Haxe, WebAssembly, TypeScript, Dart performance benchmark](https://github.com/damoebius/HaxeBench)
+
 ## 其它
 
 TODO
