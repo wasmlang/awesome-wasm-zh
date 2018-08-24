@@ -79,6 +79,7 @@ WASM Hackers 技术周报:
 
 **Go**
 
+- https://github.com/golang/go/wiki/WebAssembly
 - [Getting started into Go and WebAssembly](https://medium.com/@sendilkumarn/getting-started-into-go-and-webassembly-8491b133a616)
 - https://tip.golang.org/pkg/syscall/js/
 
