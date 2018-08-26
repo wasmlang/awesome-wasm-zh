@@ -119,6 +119,7 @@ WASM Hackers 技术周报:
 
 ## 技术文章
 
+- [Go1.11和WebAssembly](https://mp.weixin.qq.com/s/jqISsdQ9tDzy9Zg6g6u5xw)
 - [WebAssembly: How and why](https://blog.logrocket.com/webassembly-how-and-why-559b7f96cd71)
 - [Getting started into Go and WebAssembly](https://medium.com/@sendilkumarn/getting-started-into-go-and-webassembly-8491b133a616)
 - [Ray Tracing: WebAssembly vs JavaScript](http://matt-harrison.com/raytracing-webassembly-vs-javascript/)
