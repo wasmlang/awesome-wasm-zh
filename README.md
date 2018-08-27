@@ -120,6 +120,7 @@ WASM Hackers 技术周报:
 
 ## 技术文章
 
+- [Go WebAssembly — Building a Calculator Tutorial](https://hackernoon.com/go-webassembly-building-a-calculator-tutorial-70fff89db6a9)
 - [Go 1.11: WebAssembly for the gophers](https://medium.zenika.com/go-1-11-webassembly-for-the-gophers-ae4bb8b1ee03)
 - [Go1.11和WebAssembly](https://mp.weixin.qq.com/s/jqISsdQ9tDzy9Zg6g6u5xw)
 - [WebAssembly: How and why](https://blog.logrocket.com/webassembly-how-and-why-559b7f96cd71)
