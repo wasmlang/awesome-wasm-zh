@@ -51,6 +51,7 @@ WASM Hackers 技术周报:
 **C/C++**
 
 - https://github.com/LuisHsu/WasmVM
+- https://github.com/AndrewScheidecker/WAVM
 
 **Go**
 
