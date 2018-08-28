@@ -108,7 +108,6 @@ WASM Hackers 技术周报:
 1. V8 & WebAssembly
    - Liftoff: https://v8project.blogspot.com/2018/08/liftoff.html
 1. 模拟Window 2000系统:
-   - https://www.v2ex.com/t/481851
    - https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/win2k.cfg&mem=192&graphic=1&w=1024&h=768
 1. .NET UI framework
    - https://www.reddit.com/r/csharp/comments/98bjdu/brave_pilots_wanted_to_take_c_wpf_where_they
