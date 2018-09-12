@@ -42,7 +42,7 @@ WASM Hackers 技术周报:
 
 ## WebAssembly图书
 
-- [WebAssembly入门教程](webassembly-primer.md) - 即将完稿, 待出版
+- [WebAssembly标准入门](webassembly-primer.md) - 初步完稿, 待出版
 
 ----
 
