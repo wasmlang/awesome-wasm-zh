@@ -16,6 +16,11 @@ WASM Hackers 技术周报:
 
 ----
 
+## 收录标准
+
+- 有深度或时效性的单篇或系列非转载的原创或翻译文章
+- Github上类似awesome系列的集合类或列表类项目必须：WebAssembly强相关的，至少100个star
+
 ## 其它awesome
 
 - https://github.com/mbasso/awesome-wasm
