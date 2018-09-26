@@ -84,6 +84,7 @@ WASM Hackers 技术周报:
 
 - http://kripken.github.io/emscripten-site/
 - https://wiki.dlang.org/Generating_WebAssembly_with_LDC
+- https://github.com/rianhunter/wasmjit
 
 **Go**
 
