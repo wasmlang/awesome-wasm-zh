@@ -59,6 +59,7 @@ WASM Hackers 技术周报:
 
 - https://github.com/LuisHsu/WasmVM
 - https://github.com/AndrewScheidecker/WAVM
+- https://github.com/rianhunter/wasmjit
 
 **Go**
 
@@ -128,6 +129,8 @@ WASM Hackers 技术周报:
 
 ## 技术文章
 
+- [I ported my Gameboy Color emulator to WebAssembly](https://djhworld.github.io/post/2018/09/21/i-ported-my-gameboy-color-emulator-to-webassembly/)
+- [WebAssembly Cephes – Mathematical special functions in JavaScript](https://www.nearform.com/blog/webassembly-cephes/)
 - [Go WebAssembly — Building a Calculator Tutorial](https://hackernoon.com/go-webassembly-building-a-calculator-tutorial-70fff89db6a9)
 - [Go 1.11: WebAssembly for the gophers](https://medium.zenika.com/go-1-11-webassembly-for-the-gophers-ae4bb8b1ee03)
 - [Go1.11和WebAssembly](https://mp.weixin.qq.com/s/jqISsdQ9tDzy9Zg6g6u5xw)
