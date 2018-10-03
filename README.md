@@ -36,6 +36,12 @@ WASM Hackers 技术周报:
 1. https://kripken.github.io/emscripten-site/index.html
 1. https://developer.mozilla.org/en-US/docs/WebAssembly
 
+规范文件:
+
+- [WebAssembly Specification Release 1.0 (PDF)](spec/WebAssembly-v1.0.pdf)
+- [Mechanising and Verifying the WebAssembly Specification(PDF)](spec/mechanising-and-verifying-the-webassembly-specification.pdf)
+- [Bringing the Web up to Speed with WebAssembly(PDF)](spec/pldi2017.pdf)
+
 ## Ending定律
 
 - https://zh.wikipedia.org/wiki/WebAssembly
