@@ -137,6 +137,7 @@ WASM Hackers 技术周报:
 
 ## 技术文章
 
+- [Go and wasm: generating and executing wasm with Go](https://blog.gopheracademy.com/advent-2017/go-wasm/)
 - [为什么我们相信 Wasm 可用作分布式应用开发的基础层](https://ethfans.org/posts/wasm-smart-contract-development)
 - [I ported my Gameboy Color emulator to WebAssembly](https://djhworld.github.io/post/2018/09/21/i-ported-my-gameboy-color-emulator-to-webassembly/)
 - [WebAssembly Cephes – Mathematical special functions in JavaScript](https://www.nearform.com/blog/webassembly-cephes/)
