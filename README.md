@@ -137,6 +137,7 @@ WASM Hackers 技术周报:
 
 ## 技术文章
 
+- [用idawasm IDA Pro逆向WebAssembly模块](https://xz.aliyun.com/t/2854), [英文](https://www.fireeye.com/blog/threat-research/2018/10/reverse-engineering-webassembly-modules-using-the-idawasm-ida-pro-plugin.html)
 - [Go and wasm: generating and executing wasm with Go](https://blog.gopheracademy.com/advent-2017/go-wasm/)
 - [为什么我们相信 Wasm 可用作分布式应用开发的基础层](https://ethfans.org/posts/wasm-smart-contract-development)
 - [I ported my Gameboy Color emulator to WebAssembly](https://djhworld.github.io/post/2018/09/21/i-ported-my-gameboy-color-emulator-to-webassembly/)
