@@ -137,7 +137,8 @@ WASM Hackers 技术周报:
 
 ## 技术文章
 
-
+- [Writing a Frontend Web Framework with WebAssembly And Go](https://tutorialedge.net/golang/writing-frontend-web-framework-webassembly-go/)
+- [Getting Started With Qt for WebAssembly](https://blog.qt.io/blog/2018/11/19/getting-started-qt-webassembly/)
 - [WebAssembly的静态手动逆向分析](https://bbs.pediy.com/thread-247856.htm), [英文](https://www.forcepoint.com/blog/security-labs/manual-reverse-engineering-webassembly-static-code-analysis)
 - [用idawasm IDA Pro逆向WebAssembly模块](https://xz.aliyun.com/t/2854), [英文](https://www.fireeye.com/blog/threat-research/2018/10/reverse-engineering-webassembly-modules-using-the-idawasm-ida-pro-plugin.html)
 - [Go and wasm: generating and executing wasm with Go](https://blog.gopheracademy.com/advent-2017/go-wasm/)
@@ -158,4 +159,6 @@ WASM Hackers 技术周报:
 
 ## 其它
 
-TODO
+- [Oak - The Go WebAssembly Framework](https://github.com/elliotforbes/oak)
+- [Z80反汇编器](https://floooh.github.io/tiny8bit/kc85-ui.html?type=kc85_4)
+
