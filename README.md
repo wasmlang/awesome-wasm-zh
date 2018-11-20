@@ -137,6 +137,8 @@ WASM Hackers 技术周报:
 
 ## 技术文章
 
+
+- [WebAssembly的静态手动逆向分析](https://bbs.pediy.com/thread-247856.htm), [英文](https://www.forcepoint.com/blog/security-labs/manual-reverse-engineering-webassembly-static-code-analysis)
 - [用idawasm IDA Pro逆向WebAssembly模块](https://xz.aliyun.com/t/2854), [英文](https://www.fireeye.com/blog/threat-research/2018/10/reverse-engineering-webassembly-modules-using-the-idawasm-ida-pro-plugin.html)
 - [Go and wasm: generating and executing wasm with Go](https://blog.gopheracademy.com/advent-2017/go-wasm/)
 - [为什么我们相信 Wasm 可用作分布式应用开发的基础层](https://ethfans.org/posts/wasm-smart-contract-development)
