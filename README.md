@@ -159,6 +159,7 @@ WASM Hackers 技术周报:
 
 ## 其它
 
+- [Try C/TypeScript/Rust in Browser](https://wasm.fastlylabs.com/)
 - [Oak - The Go WebAssembly Framework](https://github.com/elliotforbes/oak)
 - [Z80反汇编器](https://floooh.github.io/tiny8bit/kc85-ui.html?type=kc85_4)
 
