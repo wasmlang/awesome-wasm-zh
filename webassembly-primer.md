@@ -5,6 +5,7 @@
 ![](webassembly-primer-cover.png)
 
 - 作者：[柴树杉(chai2010)](https://github.com/chai2010)，[丁尔男(Ending)](https://github.com/3dgen)
+- 购买: [京东](https://item.jd.com/38472046588.html)
 
 ---
 
