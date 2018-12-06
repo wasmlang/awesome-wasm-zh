@@ -53,7 +53,7 @@ WASM Hackers 技术周报:
 
 ## WebAssembly图书
 
-1. [WebAssembly标准入门](webassembly-primer.md) - 人民邮电, 即将出版
+1. [WebAssembly标准入门](webassembly-primer.md) - 人民邮电出版社, 49元
 1. [C/C++面向WebAssembly编程](https://github.com/3dgen/cppwasm-book) - 开源图书, 完成50%
 1. [Learn WebAssembly](https://www.packtpub.com/web-development/learn-webassembly) - 英文
 1. [Programming WebAssembly with Rust](https://pragprog.com/book/khrust/programming-webassembly-with-rust) - 英文
