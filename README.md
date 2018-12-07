@@ -1,6 +1,6 @@
 # WebAssembly资料精选 - 中文版
 
-*推广: [《WebAssembly标准入门》开始预售了，欢迎关注！](https://www.epubit.com/book/detail/40619)([京东购买](https://item.jd.com/12499372.html))*
+*推广: [《WebAssembly标准入门》开始预售了，欢迎关注！](webassembly-primer.md)([京东购买](https://item.jd.com/12499372.html))*
 
 ----
 
