@@ -55,6 +55,11 @@ WASM Hackers 技术周报:
 
 ----
 
+## 有意思的例子
+
+- 浏览器中的放大镜: https://chai2010.cn/awesome-wasm-zh/examples/hello-sdl/
+- 浏览器跑C语言: https://chai2010.cn/awesome-wasm-zh/examples/c4/
+
 ## WebAssembly图书
 
 1. [WebAssembly标准入门](webassembly-primer.md) - 人民邮电出版社, 49元
