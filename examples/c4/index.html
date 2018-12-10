@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.9, minimum-scale=0.9, maximum-scale=0.9, minimal-ui">
+
+	<title>C4解释器</title>
+	<meta name="author" content="chaishushan{AT}gmail.com">
+	<meta name="copyright" content="2016 ChaiShushan <chaishushan{AT}gmail.com>. All rights reserved">
+	<meta name="description" content="C4 Playground">
+	<meta name="keywords" content="c4">
+
+	<!-- jquery -->
+	<script src="js/jquery.min.js"></script>
+
+	<!-- bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- codemirror -->
+	<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+	<script src="codemirror/lib/codemirror.js"></script>
+	<script src="codemirror/mode/clike/clike.js"></script>
+
+	<!-- vue -->
+	<script src="js/vue.min.js"></script>
+
+	<!-- markdown -->
+	<script src="js/marked.min.js"></script>
+
+	<!-- c4 -->
+	<script src="c4.js"></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<div id="main">
+	<!-- LOGO -->
+	<strong>C4</strong>
+
+	<!-- 功能按钮 -->
+	<span class="btn-group btn-group-sm">
+		<button @click="onBtnRun" class="btn btn-default">运行</button>
+		<button @click="onBtnCompile" class="btn btn-default">编译</button>
+		<button @click="onBtnDebug" class="btn btn-default">调试</button>
+	</span>
+
+	<!-- 选择代码 -->
+	<select id="btnSelectCode" v-model="selected_code_id">
+		<option v-for="example in example_list" :value="example.id">
+			{{ example.title }}
+		</option>
+	</select>
+
+	<!-- 帮助按钮 -->
+	<button @click="onBtnHelp" class="btn btn-link pull-right">帮助</button>
+	<div v-if="show_help" v-html="help_info" class="well"></div>
+
+	<!-- 代码窗口 -->
+	<textarea id="input" class="cm-tab"></textarea>
+
+	输出窗口:
+	<pre id="output" v-text="output"></pre>
+</div>
+
+<!-- ----------------------------------------------------------------------- -->
+<script>
+
+var app = new Vue({
+	el: '#main',
+	data: {
+		example_list: [
+			{ id: 'code_hello_world', title: '你好世界' },
+			{ id: 'code_sum_1_100', title: '1到100求和' },
+			{ id: 'code_fibonacci', title: '斐波那契数列' },
+			{ id: 'code_print_prime', title: '打印素数' },
+			{ id: 'code_gcd', title: '递归版GCD' },
+			{ id: 'code_gcd_stack', title: '堆栈版GCD' },
+			{ id: 'code_file_system', title: '文件操作' },
+			{ id: 'code_c_quine', title: '打印自己' }
+		],
+		selected_code_id: 'code_hello_world',
+		help_info: "帮助信息",
+		show_help: false,
+
+		output: ""
+	},
+	methods: {
+		onBtnRun: function () { runCode(0, 0) },
+		onBtnCompile: function () { runCode(1, 0) },
+		onBtnDebug: function () { runCode(0, 1) },
+		onBtnHelp: function () { this.show_help = !this.show_help }
+	},
+
+	watch: {
+		selected_code_id: function(newValue, oldValue) {
+			selectCode(newValue)
+		}
+	}
+})
+
+// ----------------------------------------------------------------------------
+
+Module.print = function(x) { app.output += x+'\n' }
+Module.printErr = function(x) { app.output += x+'\n' }
+
+var myCodeMirror = CodeMirror.fromTextArea($("#input")[0], {
+	lineNumbers: true,
+	tabSize: 4,
+	indentUnit: 4,
+	indentWithTabs: true,
+	mode: "text/x-csrc"
+})
+
+function selectCode(code_id) {
+	myCodeMirror.setValue($("#"+code_id).text());
+	app.output = ""
+}
+
+function runCode(printSource, isDebugMode) {
+	try {
+		app.output = ""
+		FS.writeFile('_a.out.c', myCodeMirror.getValue())
+		c4Run('_a.out.c', printSource, isDebugMode)
+	} catch(e) {
+		app.output = e.toString()
+	}
+}
+
+$(document).ready(function () {
+	myCodeMirror.setValue($("#"+app.selected_code_id).text());
+})
+
+// ----------------------------------------------------------------------------
+
+app.help_info = marked(`
+C4是由 Robert Swierczek 用4个函数实现的极简C语言编译器和虚拟机, 共500多行代码, 支持编译器自举.
+
+C4支持的函数有 \`open\`, \`read\`, \`close\`, \`printf\`, \`malloc\`, \`memset\`, \`memcmp\` 和 \`exit\`, 预处理语句会被忽略.
+
+C4支持的类型有 \`char\`, \`int\` 和 \`指针\`, 变量必须在声明后再赋值或使用, 变量不支持局部作用域.
+
+C4支持的语句有 \`if\`, \`while\`, \`return\` 和 \`表达式\`, 不支持前向声明, 也就不支持相互递归.
+
+C4的扩展: 增加 \`write\`, \`free\`, \`memmove\`支持, \`main\` 函数可重入, 多行注释.
+
+C4网址: https://github.com/rswier/c4
+`)
+
+</script>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<div style="display: none;">
+<pre id="code_hello_world">
+# Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+// comments
+// comments
+
+/*
+	comments
+	comments * /
+// */
+
+#include &lt;stdio.h&gt;
+#include &lt;hello, world.h&gt;
+
+/* */int main()
+{
+  printf("hello, world\n");
+  printf("#include &lt;hello, world.h&gt;\n");
+  return 0;
+}
+/*
+</pre>
+
+<pre id="code_sum_1_100">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+
+int main() {
+	int i, sum;
+
+	i = 0;
+	sum = 0;
+
+	while(i <= 100) {
+		sum = sum+i;
+		i++;
+	}
+
+	printf("sum(1+..+100) = %d\n", sum);
+	return 0;
+}
+</pre>
+
+<pre id="code_fibonacci">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+
+int main() {
+	int t1, t2, next;
+
+	t1 = t2 = 1;
+	printf("%d %d ", t1, t2);
+
+	next = t1 + t2;
+	while(next <= 1000) {
+		printf("%d ",next);
+		t1 = t2; t2 = next;
+		next = t1 + t2;
+	}
+	printf("\n");
+	return 0;
+}
+</pre>
+
+<pre id="code_print_prime">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+
+int is_prime(int n) {
+	int i;
+	i = 2;
+	while(i*i <= n) {
+		if(n%i == 0) return 0;
+		i++;
+	}
+	return 1;
+}
+
+int main() {
+	int i;
+	i = 2;
+	while(i < 20) {
+		if(is_prime(i)) {
+			printf("%d\n", i);
+		}
+		i++;
+	}
+	return 0;
+}
+</pre>
+
+<pre id="code_gcd">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+int gcd(int m, int n) {
+	return n? gcd(n, m%n): m;
+}
+
+int main() {
+	printf("gcd(27,15): %d\n", gcd(27,15));
+	return 0;
+}
+</pre>
+
+<pre id="code_gcd_stack">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int gcd(int m, int n) {
+	return n? gcd(n, m%n): m;
+}
+
+int gcd_stk(int m, int n) {
+	int *stk;
+	int sp;
+	int ret;
+
+	stk = malloc(1024);
+	sp = 0;
+
+	// push call frame
+	stk[sp+0] = 0; // return value
+	stk[sp+1] = 0; // return flag
+	stk[sp+2] = m; // push m
+	stk[sp+3] = n; // push n
+	sp = sp + 4;
+
+	while(sp > 0) {
+		m = stk[sp-2];
+		n = stk[sp-1];
+
+		if(stk[sp-3]) {
+			stk[sp-4] = stk[sp]; // return gcd(n, m%n);
+			sp = sp - 4;         // pop call frame
+		} else if(n == 0) {
+			stk[sp-4] = m;   // if(n == 0) return m;
+			sp = sp - 4;     // pop call frame
+		} else {
+			stk[sp-3] = 1;   // parent call is in return path
+
+			// push call frame
+			stk[sp+0] = 0;   // return value
+			stk[sp+1] = 0;   // return flag
+			stk[sp+2] = n;   // push n
+			stk[sp+3] = m%n; // push m%n
+			sp = sp + 4;
+		}
+	}
+
+	ret = stk[sp];
+	free(stk);
+	return ret;
+}
+
+int main() {
+	printf("gcd(27,15): %d\n", gcd(27,15));
+	printf("gcd(12,18): %d\n", gcd(12,18));
+	printf("gcd(13,19): %d\n", gcd(13,19));
+
+	printf("gcd_stk(27,15): %d\n", gcd_stk(27,15));
+	printf("gcd_stk(12,18): %d\n", gcd_stk(12,18));
+	printf("gcd_stk(13,19): %d\n", gcd_stk(13,19));
+
+	return 0;
+}
+</pre>
+
+<pre id="code_file_system">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+	char *name;
+	int fd;
+	char *p;
+	int i;
+
+	// embedded file
+	name = "data/hello.c";
+
+	// open for readonly
+	fd = open(name, 0);
+	if(fd < 0) {
+		printf("could not open(%s) file\n", name);
+		return -1;
+	}
+
+	p = malloc(1024);
+	i = read(fd, p, 1024-1);
+	close(fd);
+
+	if(i <= 0) {
+		free(p);
+		printf("read() returned %d\n", i); return -1;
+		return -1;
+	}
+	p[i] = 0;
+
+	printf("%s", p);
+	free(p);
+	return 0;
+}
+</pre>
+
+<pre id="code_c_quine">
+main(a){printf(a="main(a){printf(a=%c%s%c,34,a,34);}",34,a,34);}
+</pre>
+
+</div>
+
+<!-- ----------------------------------------------------------------------- -->
+

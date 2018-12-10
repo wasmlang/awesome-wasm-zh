@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9, minimum-scale=0.9, maximum-scale=0.9, minimal-ui">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>C4解释器</title>
+
+<!-- jquery -->
+<script src="js/jquery.min.js"></script>
+
+<!-- bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<script src="js/bootstrap.min.js"></script>
+
+<!-- codemirror -->
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<script src="codemirror/lib/codemirror.js"></script>
+<script src="codemirror/mode/clike/clike.js"></script>
+
+<!-- c4 -->
+<script src="c4.js"></script>
+
+<style>
+.CodeMirror {
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	height: auto;
+}
+.cm-tab {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+#btnSelectCode {
+	border: 1px solid #ABADB3;
+	margin: 0;
+	padding: auto 0;
+	font-size:14px;
+}
+
+/* iPhone 5 */
+@media screen and (max-width:568px) {
+	#btnSelectCode { width:96px;}
+}
+</style>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<strong>C4</strong>
+<span class="btn-group btn-group-sm">
+	<button id="btnRun" type="button" class="btn btn-default">运行</button>
+	<button id="btnCompile" type="button" class="btn btn-default">编译</button>
+	<button id="btnDebug" type="button" class="btn btn-default">调试</button>
+</span>
+
+<select id="btnSelectCode">
+	<option value="code_hello_world">你好世界</option>
+	<option value="code_sum_1_100">1到100求和</option>
+	<option value="code_fibonacci">斐波那契数列</option>
+	<option value="code_print_prime">打印素数</option>
+	<option value="code_gcd">递归版GCD</option>
+	<option value="code_gcd_stack">堆栈版GCD</option>
+	<option value="code_file_system">文件操作</option>
+	<option value="code_c_quine">打印自己</option>
+</select>
+
+<button id="btnHelp" type="button" class="btn btn-link pull-right">帮助</button>
+
+<div id="btnHelp_data" class="well" style="display: none;">
+<p>C4是由 Robert Swierczek 用4个函数实现的极简C语言编译器和虚拟机, 共500多行代码, 支持编译器自举.
+<p>C4支持的函数有 <code>open</code>, <code>read</code>, <code>close</code>, <code>printf</code>, <code>malloc</code>, <code>memset</code>, <code>memcmp</code> 和 <code>exit</code>, 预处理语句会被忽略.
+<p>C4支持的类型有 <code>char</code>, <code>int</code> 和 <code>指针</code>, 变量必须在声明后再赋值或使用, 变量不支持局部作用域.
+<p>C4支持的语句有 <code>if</code>, <code>while</code>, <code>return</code> 和 <code>表达式</code>, 不支持前向声明, 也就不支持相互递归.
+<p>C4的扩展: 增加<code>write</code>, <code>free</code>, <code>memmove</code>支持, <code>main</code> 函数可重入, 多行注释.</a>
+<p>C4网址: <a href="https://github.com/rswier/c4" target="_blank">https://github.com/rswier/c4</a>
+</div>
+
+<textarea id="input" class="cm-tab"></textarea>
+
+输出窗口:
+<pre id="output"></pre>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<script>
+var myCodeMirror = CodeMirror.fromTextArea($("#input")[0], {
+	lineNumbers: true,
+	tabSize: 4,
+	indentUnit: 4,
+	indentWithTabs: true,
+	mode: "text/x-csrc"
+})
+
+Module.print = function(x) {
+	$("#output").text($("#output").text() + x + '\n');
+}
+Module.printErr = function(x) {
+	$("#output").text($("#output").text() + x + '\n');
+}
+
+function runCode(printSource, isDebugMode) {
+	$("#output").css("color", "")
+	$("#output").text("")
+
+	try {
+		FS.writeFile('_a.out.c', myCodeMirror.getValue())
+		c4Run('_a.out.c', printSource, isDebugMode)
+	} catch(e) {
+		$("#output").css("color", "red")
+		$("#output").text(e)
+	}
+}
+
+$(document).ready(function () {
+	myCodeMirror.setValue($("#"+$("#btnSelectCode").val()).text());
+
+	$("#btnRun").click(function() { runCode(0, 0) });
+	$("#btnCompile").click(function() { runCode(1, 0) });
+	$("#btnDebug").click(function() { runCode(0, 1) });
+
+	$("#btnSelectCode").change(function () {
+		myCodeMirror.setValue($("#"+$("#btnSelectCode").val()).text());
+
+		$("#output").css("color", "")
+		$("#output").text("")
+	});
+
+	$("#btnHelp").click(function(){
+		$("#btnHelp_data").slideToggle("fast", function(){});
+	});
+})
+
+</script>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<div style="display: none;">
+<pre id="code_hello_world">
+# Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+// comments
+// comments
+
+/*
+	comments
+	comments * /
+// */
+
+#include &lt;stdio.h&gt;
+#include &lt;hello, world.h&gt;
+
+/* */int main()
+{
+  printf("hello, world\n");
+  printf("#include &lt;hello, world.h&gt;\n");
+  return 0;
+}
+/*
+</pre>
+
+<pre id="code_sum_1_100">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+
+int main() {
+	int i, sum;
+
+	i = 0;
+	sum = 0;
+
+	while(i <= 100) {
+		sum = sum+i;
+		i++;
+	}
+
+	printf("sum(1+..+100) = %d\n", sum);
+	return 0;
+}
+</pre>
+
+<pre id="code_fibonacci">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+
+int main() {
+	int t1, t2, next;
+
+	t1 = t2 = 1;
+	printf("%d %d ", t1, t2);
+
+	next = t1 + t2;
+	while(next <= 1000) {
+		printf("%d ",next);
+		t1 = t2; t2 = next;
+		next = t1 + t2;
+	}
+	printf("\n");
+	return 0;
+}
+</pre>
+
+<pre id="code_print_prime">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+
+int is_prime(int n) {
+	int i;
+	i = 2;
+	while(i*i <= n) {
+		if(n%i == 0) return 0;
+		i++;
+	}
+	return 1;
+}
+
+int main() {
+	int i;
+	i = 2;
+	while(i < 20) {
+		if(is_prime(i)) {
+			printf("%d\n", i);
+		}
+		i++;
+	}
+	return 0;
+}
+</pre>
+
+<pre id="code_gcd">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+int gcd(int m, int n) {
+	return n? gcd(n, m%n): m;
+}
+
+int main() {
+	printf("gcd(27,15): %d\n", gcd(27,15));
+	return 0;
+}
+</pre>
+
+<pre id="code_gcd_stack">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int gcd(int m, int n) {
+	return n? gcd(n, m%n): m;
+}
+
+int gcd_stk(int m, int n) {
+	int *stk;
+	int sp;
+	int ret;
+
+	stk = malloc(1024);
+	sp = 0;
+
+	// push call frame
+	stk[sp+0] = 0; // return value
+	stk[sp+1] = 0; // return flag
+	stk[sp+2] = m; // push m
+	stk[sp+3] = n; // push n
+	sp = sp + 4;
+
+	while(sp > 0) {
+		m = stk[sp-2];
+		n = stk[sp-1];
+
+		if(stk[sp-3]) {
+			stk[sp-4] = stk[sp]; // return gcd(n, m%n);
+			sp = sp - 4;         // pop call frame
+		} else if(n == 0) {
+			stk[sp-4] = m;   // if(n == 0) return m;
+			sp = sp - 4;     // pop call frame
+		} else {
+			stk[sp-3] = 1;   // parent call is in return path
+
+			// push call frame
+			stk[sp+0] = 0;   // return value
+			stk[sp+1] = 0;   // return flag
+			stk[sp+2] = n;   // push n
+			stk[sp+3] = m%n; // push m%n
+			sp = sp + 4;
+		}
+	}
+
+	ret = stk[sp];
+	free(stk);
+	return ret;
+}
+
+int main() {
+	printf("gcd(27,15): %d\n", gcd(27,15));
+	printf("gcd(12,18): %d\n", gcd(12,18));
+	printf("gcd(13,19): %d\n", gcd(13,19));
+
+	printf("gcd_stk(27,15): %d\n", gcd_stk(27,15));
+	printf("gcd_stk(12,18): %d\n", gcd_stk(12,18));
+	printf("gcd_stk(13,19): %d\n", gcd_stk(13,19));
+
+	return 0;
+}
+</pre>
+
+<pre id="code_file_system">
+// Copyright 2016 ChaiShushan &lt;chaishushan{AT}gmail.com&gt;. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+	char *name;
+	int fd;
+	char *p;
+	int i;
+
+	// embedded file
+	name = "data/hello.c";
+
+	// open for readonly
+	fd = open(name, 0);
+	if(fd < 0) {
+		printf("could not open(%s) file\n", name);
+		return -1;
+	}
+
+	p = malloc(1024);
+	i = read(fd, p, 1024-1);
+	close(fd);
+
+	if(i <= 0) {
+		free(p);
+		printf("read() returned %d\n", i); return -1;
+		return -1;
+	}
+	p[i] = 0;
+
+	printf("%s", p);
+	free(p);
+	return 0;
+}
+</pre>
+
+<pre id="code_c_quine">
+main(a){printf(a="main(a){printf(a=%c%s%c,34,a,34);}",34,a,34);}
+</pre>
+
+</div>
+
+<!-- ----------------------------------------------------------------------- -->
+
