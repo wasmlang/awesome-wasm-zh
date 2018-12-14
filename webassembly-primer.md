@@ -16,9 +16,19 @@
 ## 购买和评论
 
 - 异步：[https://www.epubit.com/book/detail/40619](https://www.epubit.com/book/detail/40619)
-- 京东：[https://item.jd.com/12499372.html](https://item.jd.com/12499372.html)
 - 豆瓣：[https://book.douban.com/subject/30396640/](https://book.douban.com/subject/30396640/)
+- 京东：[https://item.jd.com/12499372.html](https://item.jd.com/12499372.html)
+- 当当：[http://product.dangdang.com/26294126.html](http://product.dangdang.com/26294126.html)
+- 亚马逊：[https://www.amazon.cn/dp/B07KZ3ZNT3](https://www.amazon.cn/dp/B07KZ3ZNT3)
+- 互动出版网：[http://product.china-pub.com/8054658](http://product.china-pub.com/8054658)
+- 文轩网：[http://item.winxuan.com/1201798392](http://item.winxuan.com/1201798392)
+- 中国图书网：[http://www.bookschina.com/7980146.htm](http://www.bookschina.com/7980146.htm)
 - 样章：[webassembly-primer.pdf](https://github.com/chai2010/awesome-wasm-zh/blob/master/webassembly-primer.pdf)
+
+<!--
+苏宁/孔夫子
+
+-->
 
 ----
 
