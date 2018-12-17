@@ -13,6 +13,12 @@
 
 ----
 
+*Ending's law: "Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually."*
+
+*Ending定律也称为终结者定律，它是Ending在2016年Emscripten技术交流会上给出的断言：一切可被编译为WebAssembly的，终将会被编译为WebAssembly。*
+
+----
+
 ## 购买和评论
 
 - 异步：[https://www.epubit.com/book/detail/40619](https://www.epubit.com/book/detail/40619)
