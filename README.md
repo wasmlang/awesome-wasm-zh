@@ -46,6 +46,11 @@ WASM Hackers 技术周报:
 - [Mechanising and Verifying the WebAssembly Specification(PDF)](spec/mechanising-and-verifying-the-webassembly-specification.pdf)
 - [Bringing the Web up to Speed with WebAssembly(PDF)](spec/pldi2017.pdf)
 
+性能报告:
+
+- [Mind the Gap: Analyzing the Performance of WebAssembly vs. Native Code](spec/1901.09056.pdf)
+
+
 ## Ending定律
 
 - https://zh.wikipedia.org/wiki/WebAssembly
