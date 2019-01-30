@@ -48,7 +48,7 @@ WASM Hackers 技术周报:
 
 性能报告:
 
-- [Mind the Gap: Analyzing the Performance of WebAssembly vs. Native Code](spec/1901.09056.pdf)
+- [Mind the Gap: Analyzing the Performance of WebAssembly vs. Native Code(PDF)](spec/1901.09056.pdf)
 
 
 ## Ending定律
