@@ -40,7 +40,7 @@
 
 ## 作者简介
 
-- 柴树杉，青云QingCloud高级软件工程师，Go语言和WebAssembly技术专家，著有《Go语言高级编程》等书。GitHub 账号为chai2010。
+- 柴树杉，Go语言和WebAssembly技术专家，著有《Go语言高级编程》等书。GitHub 账号为chai2010。
 
 - 丁尔男，Go语言爱好者，WebAssembly技术专家， 常年从事三维渲染引擎开发， 著有《C/C++面向WebAssembly编程》等书，现任武汉航天远景科技股份有限公司应用技术总监。GitHub 账号为3dgen。
 
