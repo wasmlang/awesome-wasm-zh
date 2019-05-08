@@ -2,6 +2,8 @@
 
 *推广: [《WebAssembly标准入门》开始预售了，欢迎关注！](webassembly-primer.md)([京东购买](https://item.jd.com/12499372.html))*
 
+*推广: 欢迎关注 [光谷码农·每日新闻](https://guanggu-coder.cn/)*
+
 ----
 
 *Ending's law: "Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually."*
