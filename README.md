@@ -154,6 +154,7 @@ WASM Hackers 技术周报:
 
 ## 技术文章
 
+- [eBay实战WebAssembly：50倍性能提升](https://mp.weixin.qq.com/s/kNVSAXTffAg8oDWvNV6xHQ)
 - [How we run KrakenD on Javascript with WebAssembly](https://medium.com/devops-faith/how-we-run-krakend-on-javascript-with-webassembly-f100ac2efd67)
 - [Writing a Frontend Web Framework with WebAssembly And Go](https://tutorialedge.net/golang/writing-frontend-web-framework-webassembly-go/)
 - [Getting Started With Qt for WebAssembly](https://blog.qt.io/blog/2018/11/19/getting-started-qt-webassembly/)
