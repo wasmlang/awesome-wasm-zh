@@ -19,14 +19,15 @@
 
 https://study.163.com/provider/480000001914454/index.htm
 
-## 加入微信群
+## 加入QQ群
 
-![](https://chai2010.cn/static-images/weixin-wasm.jpg)
+- WebAssembly QQ群：726475047
 
 ## 关注微信公众号(光谷码农/guanggu-coder)
 
 ![](https://chai2010.cn/advanced-go-programming-book/weixin-guanggu-coder-logo.png)
 
+公众号底部菜单扫码加入微信群
 
 ----
 
