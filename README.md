@@ -2,10 +2,6 @@
 
 *推广: 欢迎关注 [网易云课堂·光谷码农课堂](https://study.163.com/provider/480000001914454/index.htm)*
 
-*推广: [《WebAssembly标准入门》开始预售了，欢迎关注！](webassembly-primer.md)([京东购买](https://item.jd.com/12499372.html))*
-
-*推广: 欢迎关注 [光谷码农·每日新闻](https://guanggu-coder.cn/)*
-
 ----
 
 *Ending's law: "Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually."*
@@ -78,7 +74,7 @@ https://study.163.com/provider/480000001914454/index.htm
 
 ## WebAssembly图书
 
-1. [WebAssembly标准入门](webassembly-primer.md) - 人民邮电出版社, 49元
+1. [WebAssembly标准入门](webassembly-primer.md) - 人民邮电出版社, 49元, [配套视频课程](https://study.163.com/course/introduction/1209346823.htm)
 1. [C/C++面向WebAssembly编程](https://github.com/3dgen/cppwasm-book) - 开源图书, 已完稿
 1. [WebAssembly friendly programming with C/C++](https://github.com/3dgen/cppwasm-book) - 英文
 1. [Learn WebAssembly](https://www.packtpub.com/web-development/learn-webassembly) - 英文
