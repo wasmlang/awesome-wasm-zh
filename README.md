@@ -1,6 +1,7 @@
 # WebAssembly资料精选 - 中文版
 
-*推广: 欢迎关注 [网易云课堂·光谷码农课堂](https://study.163.com/provider/480000001914454/index.htm)*
+- *KusonStack一站式可编程配置技术栈: https://github.com/KusionStack/kusion*
+- *凹语言™: https://github.com/wa-lang/wa*
 
 ----
 
@@ -9,11 +10,6 @@
 *Ending定律也称为终结者定律，它是Ending在2016年Emscripten技术交流会上给出的断言：一切可编译为WebAssembly的，终将会被编译为WebAssembly。*
 
 ----
-
-**蚂蚁金服招聘云原生方向和编程语言方向岗位(杭州/P7)：云原生方向要求熟悉k8s配套工具，如kubectl、kustomize、kubebuilder，operator；编程语言方向要求对语言对语言解释器（如py/js/lua/wasm等）、工具链、配套SDK有一定兴趣和实践经验。欢迎各位同学咨询或推荐（推荐成功独享全额推荐红包）。联系方式 chaishushan@gmail.com, shushan.css@alibaba-inc.com**
-
-----
-
 
 ## 网易云课堂·光谷码农课堂
 
