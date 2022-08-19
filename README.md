@@ -49,6 +49,7 @@ https://study.163.com/provider/480000001914454/index.htm
 
 规范文件:
 
+- [WebAssembly 2.0 Draft 2022-08-11 (PDF)](spec/WebAssembly2.0-Draft-2022-08-11.pdf)
 - [WebAssembly Specification Release 1.0 (PDF)](spec/WebAssembly-v1.0.pdf)
 - [Mechanising and Verifying the WebAssembly Specification(PDF)](spec/mechanising-and-verifying-the-webassembly-specification.pdf)
 - [Bringing the Web up to Speed with WebAssembly(PDF)](spec/pldi2017.pdf)
